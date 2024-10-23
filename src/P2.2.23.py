@@ -11,10 +11,13 @@ def main():
         cont = 0
         libro = input(print("Introduce un libro:"))
         print(libro)
-        lista = list(libro)
-        while cont < len(lista):
-            if any((i in lista for i in numeros)):
-                nums += 1
+        lista_char = list(libro)
+        while cont < len(lista_char):
+            cont_2 = 0
+            while cont_2 < 10:
+                if lista_char[cont] == numeros[cont_2]:
+                    nums += 1
+                cont_2 += 1
             cont += 1
         if libro == "/":
             print("Línea completada. Aparecen %d dígitos" % (nums))
